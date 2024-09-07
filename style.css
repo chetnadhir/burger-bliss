@@ -1,0 +1,436 @@
+*{
+margin:0;
+padding: 0;
+box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+h1{
+  font-family: 'Josefin Sans';
+  color: #ffffff8a;
+  justify-content: center;
+  text-align: center;
+}
+body {
+  background-color:#ffffff;
+  color: #000000;
+  width: 100%;
+  height: 100vh;
+ font-family: Georgia, 'Times New Roman', Times, serif;
+}
+section{
+  padding:2rem 9%;
+}
+
+button{
+  color: #ccc;
+  justify-content: center;
+  text-align: center;
+}
+
+  .button {
+    align-items: center;
+    appearance: none;
+    background-clip: padding-box;
+    background-color: initial;
+    background-image: none;
+    border-style: none;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    flex-direction: row;
+    flex-shrink: 0;
+    font-family: Eina01,sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    justify-content: center;
+    line-height: 24px;
+    margin: 0;
+    min-height: 64px;
+    outline: none;
+    overflow: visible;
+    padding: 19px 26px;
+    pointer-events: auto;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    width: auto;
+    word-break: keep-all;
+    z-index: 0;
+    left: 700px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  @media (min-width: 768px) {
+    .button {
+      padding: 19px 32px;
+    }
+  }
+  
+  .button:before,
+  .button:after {
+    border-radius: 80px;
+  }
+  
+  .button:before {
+    background-image: linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -2;
+  }
+  
+  .button:after {
+    background-color: initial;
+    background-image: linear-gradient(#541a0f 0, #0c0d0d 100%);
+    bottom: 4px;
+    content: "";
+    display: block;
+    left: 4px;
+    overflow: hidden;
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    transition: all 100ms ease-out;
+    z-index: -1;
+  }
+  
+  .button:hover:not(:disabled):before {
+    background: linear-gradient(92.83deg, rgb(255, 116, 38) 0%, rgb(249, 58, 19) 100%);
+  }
+  
+  .button:hover:not(:disabled):after {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    transition-timing-function: ease-in;
+    opacity: 0;
+  }
+  
+  .button:active:not(:disabled) {
+    color: #ccc;
+  }
+  
+  .button:active:not(:disabled):before {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
+  }
+  
+  .button:active:not(:disabled):after {
+    background-image: linear-gradient(#541a0f 0, #0c0d0d 100%);
+    bottom: 4px;
+    left: 4px;
+    right: 4px;
+    top: 4px;
+  }
+  
+  .button:disabled {
+    cursor: default;
+    opacity: .24;
+  }
+h1{
+  margin: 0.25 0 ;
+  font-size: 80px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+p{
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 175%;
+
+}
+
+.scroll-watcher{
+  height: 10px;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background-color: aliceblue;
+  width: 100%;
+  scale: 0.1;
+  transform-origin: left;
+  animation: scroll-watcher linear;
+  animation-timeline: scroll();
+}
+@keyframes scroll-watcher {
+  to{ scale:1 1;}
+}
+
+
+.animation::after{
+  content: "";
+  background-color: (
+    "https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Dissolve_Noise_Texture.png"
+  );
+  width: 200%;
+  height: 200%;
+  position: fixed;
+  top:0;
+  left: 0;
+  opacity: 0.1;
+  animation: animateGrain 8s steps(10) infinite;
+}
+
+.gradient {
+ width: 100vw;
+ height: 4vh;
+ position: relative;
+ background: linear-gradient(
+  180deg, rgba(0,0,0,0)0%,
+  rgba(0,0,0,1) 100%
+ );
+ z-index: 1;
+}
+
+.website-content {
+  position: relative;
+  width: 100%;
+  height: 110vh;
+  padding: 2em;
+  background: #000000;
+  color: #ffffff;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-start; 
+}
+.website-content.img {
+  animation: appear 5s  linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+  width: 100px;
+  margin-left: 20px;
+  position: absolute; 
+  top: 80%; 
+  right: 10%; 
+}
+.website-content h3 {
+  font-family: "Noto Serif Display", serif;
+  position: absolute;
+  top: calc(40% + 20px); 
+  right: 10%;
+}
+
+.website-content p {
+  font-family: "Noto Serif Display", serif;
+  position: absolute;
+  top: calc(40% + 20px + 30px); 
+  right: 10%;
+}
+@keyframes animateGrain {
+  0%,
+  100% {
+    transform: translate(0,0);
+  }
+  10% {
+    transform: translate(-5%,-10%);
+  }
+  20% {
+    transform: translate(-15%,-20%);
+  }
+  30% {
+    transform: translate(-5%,-10%);
+  }
+  40% {
+    transform: translate(-15%,-20%);
+  }
+  50% {
+    transform: translate(-5%,-10%);
+  }
+  60% {
+    transform: translate(-15%,-20%);
+  }
+  70% {
+    transform: translate(-5%,-10%);
+  }
+  80% {
+    transform: translate(-15%,-20%);
+  }
+  90% {
+    transform: translate(-5%,-10%);
+  }
+  100% {
+    transform: translate(-15%,-20%);
+  }
+}
+.topnav {
+  background-color: #333333a9;
+  overflow: hidden;
+}
+
+.topnav a {
+  float: left;
+  color: whitesmoke;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.topnav a.active {
+  background-color: #1b263b;
+  color: white;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+
+/*footer*/
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@300&family=Rubik:wght@400;500;700&display=swap");
+
+:root {
+  --light: #ffffff;
+  --dark: #000;
+}
+body {
+  font-family: "Rubik", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h3 {
+  font-family: "Noto Serif Display", serif;
+  font-size: 2.3rem;
+  font-weight: 300;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: 400;
+  transition: 0.3s ease-in;
+  border-bottom: 1px solid transparent;
+  margin-bottom: 0.5rem;
+  display: inline-flex;
+}
+a:hover {
+  border-bottom: 1px solid var(--dark);
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+}
+.flex {
+  display: flex;
+}
+.footer_video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  border: none;
+}
+.footer_inner {
+  background: var(--light);
+  backdrop-filter: blur(50px);
+  border: 0.1px solid rgba(233, 232, 232, 0.208);
+  border-radius: 5px;
+  padding: 2rem;
+  margin: 1rem 0;
+}
+.footer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(100%, 400px);
+  border-bottom: 1px solid var(--dark);
+}
+
+input {
+  padding: 0.75rem 0;
+  border: none;
+  background: none;
+  font-weight: 500;
+  transition: border 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  border-radius: 0;
+  width: 100%;
+  font-size: 1.05rem;
+  font-weight: bolder;
+}
+input:focus {
+  outline: none;
+}
+input::placeholder {
+  color: var(--dark);
+}
+@media (min-width: 675px) {
+  .layout {
+    display: flex;
+    flex-wrap: nowrap;
+    column-gap: 2rem;
+  }
+  .w-50 {
+    width: 50%;
+  }
+  .w-25 {
+    width: 25%;
+  }
+}
+form {
+  position: relative;
+}
+svg {
+  margin: 0.5rem;
+}
+.c-2 {
+  margin-top: 3.5rem;
+}
+.footer_copyright {
+  color: black;
+}
+/* Container for centering */
+.container {
+  display: flex; /* Using flexbox for centering */
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+  height: 100vh; /* Full viewport height */
+}

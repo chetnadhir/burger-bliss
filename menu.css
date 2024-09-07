@@ -1,0 +1,136 @@
+body {
+  display: flex;
+  padding: 0 35px;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: radial-gradient(circle, rgba(255,208,3,1) 0%, rgba(207,87,20,1) 57%, rgba(255,0,0,1) 96%);
+}
+
+.wrapper {
+  position: relative;
+  max-width: 1100px;
+  width: 100%;
+  margin: auto;
+  padding: 20px;
+}
+
+.wrapper i {
+  top: 50%;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  position: absolute;
+  text-align: center;
+  line-height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+}
+
+.wrapper i:active {
+  transform: translateY(-50%) scale(0.85);
+}
+
+.wrapper i:first-child {
+  left: -22px;
+}
+
+.wrapper i:last-child {
+  right: -22px;
+}
+
+.menu {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3) - 12px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 16px;
+  border-radius: 8px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  white-space: nowrap;
+  transition: transform 0.5s;
+}
+
+.menu::-webkit-scrollbar {
+  display: none;
+}
+
+.menu .item {
+  scroll-snap-align: start;
+  height: 402px;
+  list-style: none;
+  background: url('menu/p.png') no-repeat center center;
+  background-size: cover; 
+  cursor: pointer;
+  padding-bottom: 15px;
+  display: flex; 
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center; 
+  border-radius: 8px;
+  position: relative; 
+}
+
+.menu .item .img {
+  height: 212px;
+  width: 148px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+}
+
+.menu .item .img img {
+  width: 200px;
+  height: 200px;
+}
+
+.menu .item h2, .menu .item span {
+  color: #fff; 
+  z-index: 1;
+  margin: 0; 
+}
+
+.menu .item h2 {
+  font-weight: 500;
+  font-size: 1.56rem;
+  margin: 30px 0 5px;
+}
+
+.menu .item span {
+  color: #ffcdcdb8;
+  font-size: 15px;
+}
+
+@media screen and (max-width: 900px) {
+  .wrapper .menu {
+    grid-auto-columns: calc((100% / 2) - 9px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper .menu {
+    grid-auto-columns: 100%;
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.menu-moving .item {
+  animation: slideLeft -5s forwards; 
+}
